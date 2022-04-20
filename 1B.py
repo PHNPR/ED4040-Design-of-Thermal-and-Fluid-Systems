@@ -12,7 +12,7 @@ i = 0.6
 th , tc = 923 , 293 
 vr = vce = vcc = i * vse
 vh = vc = vr / 4
-P = 250
+P = 500
 f = 41.167
 R = 8.3144
 alpha = 90
@@ -49,3 +49,9 @@ st = round(abs(sol[0]),6)
 print('The value of stroke is' , st)
 rad = st / 3
 print('The value of radius is' , rad)
+
+
+
+
+
+
