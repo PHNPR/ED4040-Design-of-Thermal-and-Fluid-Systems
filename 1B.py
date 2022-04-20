@@ -21,16 +21,16 @@ R_He = R / 4
 #Calculations 
 Vnet = vse + vsc + vcc + vce + vr + vh + vc
 Mnet = ( Vnet / 22.4 ) * 4
-s = vsc/(2*tc) + vcc/tc + vc/tc + vse/(2*th) + vcc/th + vh/th + vr * math.log(th/tc,10)/(th-tc)
-c = ( (vse/th)**2 + (vsc/tc)**2 + 2*vse*vsc*cos(alpha) / (th*tc) )**0.5 / 2
-b = c / s 
-Pm = Mnet * R_He / ( s * (1-b**2)**0.5)
-y = np.degrees(math.atan( (vse*sin(alpha)/th) / (vse*cos(alpha)/th + vsc/th ) ))
+temp1 = ( (vse/th)**2 + (vsc/tc)**2 + 2*vse*vsc*cos(alpha) / (th*tc) )**0.5 / 2
+temp2 = vsc/(2*tc) + vcc/tc + vc/tc + vse/(2*th) + vcc/th + vh/th + vr * math.log(th/tc,10)/(th-tc)
+temp = temp1 / temp2 
+Pm = Mnet * R_He / ( temp2 * (1-temp**2)**0.5)
+beta = np.degrees(math.atan( (vse*sin(alpha)/th) / (vse*cos(alpha)/th + vsc/th ) ))
 
-#Final Equation 
+#Solving
 W = P / f
-Wc = -1 * math.pi * vsc * Pm * sin(y) * ((1-b**2)**0.5 - 1) / b 
-We = -1 * math.pi * vse * Pm * sin(alpha-y) * ((1-b**2)**0.5-  1) / b 
+Wc = -1 * math.pi * vsc * Pm * sin(beta) * ((1-temp**2)**0.5 - 1) / temp
+We = -1 * math.pi * vse * Pm * sin(alpha-beta) * ((1-temp**2)**0.5-  1) / temp
 equation = Eq(W , Wc + We)
 sol = solve( equation , vse )
 vse = round(abs(sol[0]),6)
