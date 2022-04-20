@@ -49,9 +49,3 @@ st = round(abs(sol[0]),6)
 print('The value of stroke is' , st)
 rad = st / 3
 print('The value of radius is' , rad)
-
-
-
-
-
-
