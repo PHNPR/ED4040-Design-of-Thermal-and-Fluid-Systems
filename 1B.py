@@ -46,6 +46,10 @@ equation = Eq(vse , volume)
 sol = solve(equation , st)
 st = round(abs(sol[0]),6)
 
-print('The value of stroke is' , st)
+print('The value of stroke length is' , st)
 rad = st / 3
 print('The value of radius is' , rad)
+area = math.pi * (rad ** 2)
+print('The value of Cross sectional area is' , rad)
+rpm = f * 60
+print('The value of RPM is' , int(rpm))
