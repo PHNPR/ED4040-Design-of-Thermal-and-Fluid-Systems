@@ -33,9 +33,9 @@ Wc = -1 * math.pi * vsc * Pm * sin(y) * ((1-b**2)**0.5 - 1) / b
 We = -1 * math.pi * vse * Pm * sin(alpha-y) * ((1-b**2)**0.5-  1) / b 
 equation = Eq(W , Wc + We)
 sol = solve( equation , vse )
-vse = abs(sol[0])
+vse = round(abs(sol[0]),6)
 
-print(vse)
+print('The sweep volume during expansion is' , vse)
 
 ''' Calculating stroke and radius '''
 st = symbols('stroke')
@@ -44,8 +44,8 @@ area = math.pi * (rad ** 2)
 volume = area * st
 equation = Eq(vse , volume)
 sol = solve(equation , st)
-st = abs(sol[0])
+st = round(abs(sol[0]),6)
 
-print(st)
+print('The value of stroke is' , st)
 rad = st / 3
-print(rad)
+print('The value of radius is' , rad)
