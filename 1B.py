@@ -25,7 +25,7 @@ temp1 = ( (vse/th)**2 + (vsc/tc)**2 + 2*vse*vsc*cos(alpha) / (th*tc) )**0.5 / 2
 temp2 = vsc/(2*tc) + vcc/tc + vc/tc + vse/(2*th) + vcc/th + vh/th + vr * math.log(th/tc,10)/(th-tc)
 temp = temp1 / temp2 
 Pm = Mnet * R_He / ( temp2 * (1-temp**2)**0.5)
-beta = np.degrees(math.atan( (vse*sin(alpha)/th) / (vse*cos(alpha)/th + vsc/th ) ))
+beta = np.degrees(math.atan((vse*sin(alpha)/th) / (vse*cos(alpha)/th + vsc/th )))
 
 #Solving
 W = P / f
