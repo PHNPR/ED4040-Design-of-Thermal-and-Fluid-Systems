@@ -8,13 +8,13 @@ def cos(i) : return round(np.cos(np.radians(i)),6)
 #Assumptions
 vse = symbols('vse') 
 vsc = vse
-i = 0.6  
-th , tc = 923 , 293 
+i = 0.6                   # engine parameter
+th , tc = 923 , 293       # temperature in kelvin
 vr = vce = vcc = i * vse
 vh = vc = vr / 4
-P = 500
-f = 41.167
-R = 8.3144
+P = 500                   # power required
+f = 41.167      
+R = 8.314459              # universal gas constant
 alpha = 90
 R_He = R / 4 
 
