@@ -30,7 +30,7 @@ beta = np.degrees(math.atan((vse*sin(alpha)/th) / (vse*cos(alpha)/th + vsc/th ))
 #Solving
 W = P / f
 Wc = -1 * math.pi * vsc * Pm * sin(beta) * ((1-temp**2)**0.5 - 1) / temp
-We = -1 * math.pi * vse * Pm * sin(alpha-beta) * ((1-temp**2)**0.5-  1) / temp
+We = -1 * math.pi * vse * Pm * sin(alpha-beta) * ((1-temp**2)**0.5 - 1) / temp
 equation = Eq(W , Wc + We)
 sol = solve( equation , vse )
 vse = round(abs(sol[0]),6)
