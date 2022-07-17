@@ -2,8 +2,8 @@
 import math
 import numpy as np
 from sympy import solve , symbols , Eq
-def sin(i) : return round(np.sin(np.radians(i)),6)
-def cos(i) : return round(np.cos(np.radians(i)),6)
+def sin(i) : return np.sin(np.radians(i))
+def cos(i) : return np.cos(np.radians(i))
 
 #Assumptions
 vse = symbols('vse') 
